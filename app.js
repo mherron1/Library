@@ -8,6 +8,14 @@ function Book(name, author, genre, year, read) {
     (this.read = read);
 }
 
+Book.prototype.toggleRead = function () {
+  if (this.read === "yes") {
+    this.read = "no";
+  } else {
+    this.read = "yes";
+  }
+};
+//adding some sample books
 let book1 = new Book("Anna Karenina", "Leo Tolstoy", "Fiction", 1878, "yes");
 myLibrary.push(book1);
 let book2 = new Book("Moby Dick", "Herman Melville", "fiction", 1851, "no");
@@ -18,57 +26,57 @@ myLibrary.push(book3);
 displayLibrary();
 
 function addBookToLibrary() {
-  var name = document.getElementById("nameInput").value;
-  var author = document.getElementById("authorInput").value;
-  var genre = document.getElementById("genreInput").value;
-  var year = document.getElementById("yearInput").value;
-  var read = document.getElementById("readInput").value;
+  let name = document.getElementById("nameInput").value;
+  let author = document.getElementById("authorInput").value;
+  let genre = document.getElementById("genreInput").value;
+  let year = document.getElementById("yearInput").value;
+  let read = document.getElementById("readInput").value;
 
   let newBook = new Book(name, author, genre, year, read);
   myLibrary.unshift(newBook);
-  const container = document.querySelector("#container");
-  clearLibrary(container);
+  let container = document.querySelector("#container");
 
+  clearLibrary(container);
   displayLibrary();
+  removeForm();
+  //clear form inputs
   let inputs = document.querySelectorAll("input");
   inputs.forEach((input) => (input.value = ""));
 }
 
-console.table(myLibrary);
-
 function displayLibrary() {
   for (let i = 0; i < myLibrary.length; i++) {
-    const container = document.querySelector("#container");
-    const displayBook = document.createElement("div");
+    let container = document.querySelector("#container");
+    let displayBook = document.createElement("div");
     displayBook.classList.add("displayBook");
     container.appendChild(displayBook);
 
-    const bookName = document.createElement("div");
+    let bookName = document.createElement("div");
     bookName.classList.add("bookName");
     bookName.textContent = `${myLibrary[i]["name"]}`;
     displayBook.appendChild(bookName);
 
-    const bookAuthor = document.createElement("div");
+    let bookAuthor = document.createElement("div");
     bookAuthor.classList.add("bookAuthor");
     bookAuthor.textContent = `By ${myLibrary[i]["author"]}`;
     displayBook.appendChild(bookAuthor);
 
-    const bookGenre = document.createElement("div");
+    let bookGenre = document.createElement("div");
     bookGenre.classList.add("bookGenre");
     bookGenre.textContent = `Genre: ${myLibrary[i]["genre"]}`;
     displayBook.appendChild(bookGenre);
 
-    const bookYear = document.createElement("div");
+    let bookYear = document.createElement("div");
     bookYear.classList.add("bookYear");
     bookYear.textContent = `Year: ${myLibrary[i]["year"]}`;
     displayBook.appendChild(bookYear);
 
-    const bookRead = document.createElement("div");
+    let bookRead = document.createElement("div");
     bookRead.classList.add("bookRead");
     bookRead.textContent = `Read: ${myLibrary[i]["read"]}`;
     displayBook.appendChild(bookRead);
 
-    const removeButton = document.createElement("button");
+    let removeButton = document.createElement("button");
     removeButton.classList.add("removeButton");
     removeButton.textContent = `Remove Book`;
     displayBook.appendChild(removeButton);
@@ -78,16 +86,12 @@ function displayLibrary() {
       displayLibrary();
     });
 
-    const readToggle = document.createElement("button");
+    let readToggle = document.createElement("button");
     readToggle.classList.add("readToggle");
     readToggle.textContent = `read status`;
     displayBook.appendChild(readToggle);
     readToggle.addEventListener("click", () => {
-      if (myLibrary[i]["read"] === "yes") {
-        myLibrary[i]["read"] = "no";
-      } else {
-        myLibrary[i]["read"] = "yes";
-      }
+      myLibrary[i].toggleRead();
       clearLibrary(container);
       displayLibrary();
     });
@@ -100,6 +104,16 @@ function clearLibrary(container) {
   }
 }
 
-Book.prototype.toggleRead = function () {};
+function displayForm() {
+  let formArea = document.querySelector("#form");
+  let newBookButton = document.querySelector("#newBookButtonArea");
+  newBookButton.style = "display: none";
+  formArea.style = "display: block;";
+}
 
-console.log;
+function removeForm() {
+  let formArea = document.querySelector("#form");
+  let newBookButton = document.querySelector("#newBookButtonArea");
+  newBookButton.style = "display: block";
+  formArea.style = "display: none;";
+}
