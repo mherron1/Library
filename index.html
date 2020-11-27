@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>My Library</h1>
+    <form id="form" onsubmit="return false;">
+      <div>
+        <label>Title: </label>
+        <input type="text" id="nameInput" />
+      </div>
+      <div>
+        <label>Author: </label>
+        <input type="text" id="authorInput" />
+      </div>
+      <div>
+        <label>Genre: </label>
+        <input type="text" id="genreInput" />
+      </div>
+      <div>
+        <label>Year: </label>
+        <input type="text" id="yearInput" />
+      </div>
+      <div>
+        <label>Read y/n: </label>
+        <input type="text" id="readInput" />
+      </div>
+
+      <button type="button" onclick="addBookToLibrary();">Add Book</button>
+    </form>
+    <div id="container"></div>
+  </body>
+
+  <script src="app.js"></script>
+</html>
