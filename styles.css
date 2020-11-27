@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(161, 205, 212);
+  background-color: #9cbfc5;
 }
 
 h1 {
   font-family: arial;
   font-size: 35px;
-  color: black;
+  color: rgb(0, 0, 0);
   max-width: 200px;
 }
 #container {
@@ -34,7 +34,7 @@ h1 {
 }
 
 .displayBook {
-  background-color: white;
+  background-color: rgb(219, 213, 179);
   border: 5px solid black;
   border-radius: 10px;
 
@@ -65,7 +65,7 @@ form {
   display: none;
   font-size: large;
   max-width: 275px;
-  height: 130px;
+  height: 138px;
   margin: 0 auto;
   margin-top: 20px;
   text-align: right;
@@ -82,7 +82,7 @@ form {
 
 #newBookButtonArea {
   max-width: 200px;
-  height: 147px;
+  height: 155px;
   display: block;
   margin: 0 auto;
 }

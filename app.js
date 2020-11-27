@@ -1,5 +1,4 @@
 let myLibrary = [];
-
 function Book(name, author, genre, year, read) {
   (this.name = name),
     (this.author = author),
@@ -38,6 +37,7 @@ function addBookToLibrary() {
 
   clearLibrary(container);
   displayLibrary();
+
   removeForm();
   //clear form inputs
   let inputs = document.querySelectorAll("input");
