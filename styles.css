@@ -13,7 +13,7 @@ h1 {
   max-width: 800px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media only screen and (max-width: 800px) {
@@ -21,7 +21,7 @@ h1 {
     max-width: 600px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -30,14 +30,14 @@ h1 {
     max-width: 380px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 180px 180px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .displayBook {
   background-color: white;
   border: 5px solid black;
-  height: 175px;
+
   width: 140px;
   margin: 0 auto;
   margin-top: 20px;
@@ -52,12 +52,12 @@ h1 {
 }
 
 .removeButton {
-  padding: 5px;
+  padding: 2px;
   margin-top: 10px;
 }
 
 .readToggle {
-  padding: 5px;
+  padding: 2px;
   margin-top: 10px;
 }
 
