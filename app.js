@@ -107,7 +107,7 @@ function clearLibrary(container) {
 function displayForm() {
   let formArea = document.querySelector("#form");
   let newBookButton = document.querySelector("#newBookButtonArea");
-  newBookButton.style = "display: none";
+  newBookButton.style = "display: block";
   formArea.style = "display: block;";
 }
 
