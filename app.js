@@ -1,19 +1,22 @@
 let myLibrary = [];
-function Book(name, author, genre, year, read) {
-  (this.name = name),
-    (this.author = author),
-    (this.genre = genre),
-    (this.year = year),
-    (this.read = read);
+class Book {
+  constructor(name, author, genre, year, read) {
+    (this.name = name),
+      (this.author = author),
+      (this.genre = genre),
+      (this.year = year),
+      (this.read = read);
+  }
+
+  toggleRead() {
+    if (this.read === "yes") {
+      this.read = "no";
+    } else {
+      this.read = "yes";
+    }
+  }
 }
 
-Book.prototype.toggleRead = function () {
-  if (this.read === "yes") {
-    this.read = "no";
-  } else {
-    this.read = "yes";
-  }
-};
 //adding some sample books
 let book1 = new Book("Anna Karenina", "Leo Tolstoy", "Fiction", 1878, "yes");
 myLibrary.push(book1);
